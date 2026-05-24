@@ -1,7 +1,7 @@
 export interface Question {
   id: string
-  level: 'A1' | 'A2' | 'B1'
-  type: 'grammar' | 'vocabulary'
+  level: 'A1' | 'A2' | 'B1' | 'B2' | 'C1'
+  type: 'grammar' | 'vocabulary' | 'writing' | 'speaking'
   question: string
   options: string[]
   correctIndex: number
@@ -1911,6 +1911,734 @@ export const questions: Question[] = [
       de: '"fest davon überzeugt sein" ist ein feststehender Ausdruck für eine starke Überzeugung.',
       th: '"fest davon überzeugt sein" เป็นสำนวนแปลว่า "เชื่อมั่นอย่างแน่วแน่/มั่นใจอย่างยิ่ง" ส่วน "enttäuscht" แปลว่า ผิดหวัง และ "überrascht" แปลว่า ประหลาดใจ',
       en: '"fest davon überzeugt sein" is an idiom meaning "to be firmly convinced". "enttäuscht" means disappointed, and "überrascht" means surprised.'
+    }
+  },
+  // ==================== EXTRA VOCABULARY QUESTIONS (1-10) ====================
+  {
+    id: 'vocab-extra-1',
+    level: 'A1',
+    type: 'vocabulary',
+    question: 'Ich trinke am Morgen gerne ___ mit Milch und Zucker.',
+    options: ['Kaffee', 'Bier', 'Wein', 'Salz'],
+    correctIndex: 0,
+    translations: {
+      de: 'Ich trinke am Morgen gerne Kaffee mit Milch und Zucker.',
+      th: 'ในตอนเช้าฉันชอบดื่มกาแฟใส่นมและน้ำตาล',
+      en: 'In the morning, I like to drink coffee with milk and sugar.'
+    },
+    explanation: {
+      de: '"Kaffee" ist das typische Heißgetränk für den Morgen. Bier und Wein sind alkoholische Getränke, Salz ist ein Gewürz.',
+      th: '"Kaffee" (กาแฟ) คือเครื่องดื่มร้อนทั่วไปสำหรับตอนเช้า ส่วน Bier และ Wein เป็นเครื่องดื่มแอลกอฮอล์ และ Salz คือเกลือ',
+      en: '"Kaffee" (coffee) is the typical hot drink for the morning. Bier and Wein are alcoholic beverages, and Salz is salt.'
+    }
+  },
+  {
+    id: 'vocab-extra-2',
+    level: 'A1',
+    type: 'vocabulary',
+    question: 'Wir kaufen Brot und Brötchen in der ___.',
+    options: ['Bäckerei', 'Apotheke', 'Metzgerei', 'Bibliothek'],
+    correctIndex: 0,
+    translations: {
+      de: 'Wir kaufen Brot und Brötchen in der Bäckerei.',
+      th: 'พวกเราซื้อขนมปังและขนมปังก้อนเล็กที่ร้านขายขนมปัง',
+      en: 'We buy bread and rolls at the bakery.'
+    },
+    explanation: {
+      de: '"Bäckerei" ist das Geschäft, in dem Brot gebacken und verkauft wird. "Apotheke" = pharmacy, "Metzgerei" = butcher\'s, "Bibliothek" = library.',
+      th: '"Bäckerei" (ร้านขนมปัง) คือร้านอบและขายขนมปัง ส่วน "Apotheke" คือร้านขายยา, "Metzgerei" คือร้านขายเนื้อ และ "Bibliothek" คือห้องสมุด',
+      en: '"Bäckerei" (bakery) is the shop where bread is baked and sold. "Apotheke" means pharmacy, "Metzgerei" means butcher shop, and "Bibliothek" means library.'
+    }
+  },
+  {
+    id: 'vocab-extra-3',
+    level: 'A2',
+    type: 'vocabulary',
+    question: 'Ich muss einen Termin beim Arzt ___.',
+    options: ['vereinbaren', 'kochen', 'singen', 'fahren'],
+    correctIndex: 0,
+    translations: {
+      de: 'Ich muss einen Termin beim Arzt vereinbaren.',
+      th: 'ฉันต้องนัดหมายเวลากับคุณหมอ',
+      en: 'I must make an appointment with the doctor.'
+    },
+    explanation: {
+      de: '"einen Termin vereinbaren" ist der feste Ausdruck für das Ausmachen eines Termins.',
+      th: '"einen Termin vereinbaren" เป็นสำนวนหมายถึง "นัดหมายเวลา" ส่วนกริยาอื่นๆ ไม่ตรงความหมาย (kochen = ทำอาหาร, singen = ร้องเพลง, fahren = ขับรถ)',
+      en: '"einen Termin vereinbaren" is the standard collocation for making/arranging an appointment.'
+    }
+  },
+  {
+    id: 'vocab-extra-4',
+    level: 'A2',
+    type: 'vocabulary',
+    question: 'Das Auto ist kaputt. Ich muss es in die ___ bringen.',
+    options: ['Werkstatt', 'Küche', 'Post', 'Schule'],
+    correctIndex: 0,
+    translations: {
+      de: 'Das Auto ist kaputt. Ich muss es in die Werkstatt bringen.',
+      th: 'รถเสีย ฉันต้องนำมันไปที่อู่ซ่อมรถ',
+      en: 'The car is broken. I have to take it to the repair shop.'
+    },
+    explanation: {
+      de: '"Werkstatt" (Kfz-Werkstatt) ist der Ort, an dem Autos repariert werden.',
+      th: '"Werkstatt" (อู่ซ่อมรถ) คือสถานที่สำหรับซ่อมแซมรถยนต์ ส่วน Küche = ครัว, Post = ไปรษณีย์, Schule = โรงเรียน',
+      en: '"Werkstatt" (repair shop / garage) is the place where cars are repaired.'
+    }
+  },
+  {
+    id: 'vocab-extra-5',
+    level: 'A2',
+    type: 'vocabulary',
+    question: 'Bitte füllen Sie dieses ___ aus und unterschreiben Sie hier.',
+    options: ['Formular', 'Buch', 'Auto', 'Haus'],
+    correctIndex: 0,
+    translations: {
+      de: 'Bitte füllen Sie dieses Formular aus und unterschreiben Sie hier.',
+      th: 'กรุณากรอกแบบฟอร์มนี้และลงชื่อตรงนี้ครับ',
+      en: 'Please fill out this form and sign here.'
+    },
+    explanation: {
+      de: '"ein Formular ausfüllen" bedeutet, persönliche Daten in ein Dokument einzutragen.',
+      th: '"ein Formular ausfüllen" แปลว่า "กรอกแบบฟอร์ม" ซึ่งเป็นเอกสารราชการหรือเอกสารสมัครงานทั่วไป',
+      en: '"ein Formular ausfüllen" means to fill out a document with personal details.'
+    }
+  },
+  {
+    id: 'vocab-extra-6',
+    level: 'B1',
+    type: 'vocabulary',
+    question: 'Aufgrund des schlechten Wetters wurde der Flug ___.',
+    options: ['annulliert', 'gebucht', 'gelandet', 'gestartet'],
+    correctIndex: 0,
+    translations: {
+      de: 'Aufgrund des schlechten Wetters wurde der Flug annulliert.',
+      th: 'เนื่องจากสภาพอากาศย่ำแย่ เที่ยวบินจึงถูกยกเลิก',
+      en: 'Due to the bad weather, the flight was canceled.'
+    },
+    explanation: {
+      de: '"annullieren" bedeutet, einen geplanten Flug oder eine Reservierung offiziell abzusagen. "gebucht" = booked, "gelandet" = landed.',
+      th: '"annulliert" หมายถึง ถูกยกเลิก (เที่ยวบินหรือการจอง) ส่วน "gebucht" แปลว่าถูกจอง และ "gelandet" แปลว่าลงจอดแล้ว',
+      en: '"annullieren" means to officially cancel a planned flight or booking. "gebucht" means booked, and "gelandet" means landed.'
+    }
+  },
+  {
+    id: 'vocab-extra-7',
+    level: 'B1',
+    type: 'vocabulary',
+    question: 'Ich möchte mein Geld auf ein Sparkonto ___.',
+    options: ['überweisen', 'ausgeben', 'leihen', 'verlieren'],
+    correctIndex: 0,
+    translations: {
+      de: 'Ich möchte mein Geld auf ein Sparkonto überweisen.',
+      th: 'ฉันต้องการโอนเงินของฉันไปยังบัญชีออมทรัพย์',
+      en: 'I would like to transfer my money to a savings account.'
+    },
+    explanation: {
+      de: '"überweisen" bedeutet, Geld bargeldlos von einem Konto auf ein anderes zu übertragen. "ausgeben" = spend, "leihen" = lend/borrow.',
+      th: '"überweisen" แปลว่า "โอนเงิน" ทางบัญชี ส่วน "ausgeben" = ใช้จ่าย, "leihen" = ขอยืม/ให้ยืม, "verlieren" = ทำหาย',
+      en: '"überweisen" means to transfer money electronically from one account to another.'
+    }
+  },
+  {
+    id: 'vocab-extra-8',
+    level: 'B1',
+    type: 'vocabulary',
+    question: 'Die ___ für die Wohnung beträgt 600 Euro kalt.',
+    options: ['Miete', 'Heizung', 'Versicherung', 'Möbel'],
+    correctIndex: 0,
+    translations: {
+      de: 'Die Miete für die Wohnung beträgt 600 Euro kalt.',
+      th: 'ค่าเช่าห้องพักราคา 600 ยูโร (ยังไม่รวมค่าส่วนกลางและค่าน้ำค่าไฟ)',
+      en: 'The rent for the apartment is 600 Euros cold (excluding utilities).'
+    },
+    explanation: {
+      de: '"Kaltmiete" (Miete kalt) ist die reine Grundmiete für das Wohnen ohne Heizung und Nebenkosten.',
+      th: '"Miete kalt" (ค่าเช่าดิบ) คือค่าเช่าห้องพักพื้นฐานเท่านั้น ยังไม่รวมค่าน้ำ ค่าไฟ และค่าทำความร้อน (Heizung)',
+      en: '"Kaltmiete" (cold rent) refers to the basic rent for an apartment, excluding heating and utility bills.'
+    }
+  },
+  {
+    id: 'vocab-extra-9',
+    level: 'A2',
+    type: 'vocabulary',
+    question: 'Mein Bruder sucht eine neue ___ als Informatiker.',
+    options: ['Stelle', 'Schule', 'Kleidung', 'Freizeit'],
+    correctIndex: 0,
+    translations: {
+      de: 'Mein Bruder sucht eine neue Stelle als Informatiker.',
+      th: 'น้องชายของฉันกำลังหางานใหม่ในตำแหน่งนักไอที',
+      en: 'My brother is looking for a new job/position as an IT specialist.'
+    },
+    explanation: {
+      de: '"Stelle" bedeutet Arbeitsstelle oder Job. "eine Stelle suchen" = to look for a job.',
+      th: '"Stelle" ในที่นี้หมายถึง "ตำแหน่งงาน" หรือ "งาน" ส่วนกริยา/นามอื่นไม่ถูกต้อง (Schule = โรงเรียน, Kleidung = เสื้อผ้า)',
+      en: '"Stelle" means job position. "eine Stelle suchen" means to look for a job/employment.'
+    }
+  },
+  {
+    id: 'vocab-extra-10',
+    level: 'B1',
+    type: 'vocabulary',
+    question: 'Umweltschutz ist eine wichtige ___ für unsere Gesellschaft.',
+    options: ['Herausforderung', 'Verspätung', 'Einladung', 'Verletzung'],
+    correctIndex: 0,
+    translations: {
+      de: 'Umweltschutz ist eine wichtige Herausforderung für unsere Gesellschaft.',
+      th: 'การรักษาสิ่งแวดล้อมคือสิ่งท้าทายที่สำคัญสำหรับสังคมของพวกเรา',
+      en: 'Environmental protection is an important challenge for our society.'
+    },
+    explanation: {
+      de: '"Herausforderung" ist eine schwierige, aber wichtige Aufgabe. "Verspätung" = delay, "Einladung" = invitation, "Verletzung" = injury.',
+      th: '"Herausforderung" แปลว่า "ความท้าทาย" ส่วน "Verspätung" แปลว่า การมาสาย/ความล่าช้า และ "Einladung" คือ การเชิญชวน',
+      en: '"Herausforderung" means a challenge or a demanding task. "Verspätung" means delay, and "Einladung" means invitation.'
+    }
+  },
+
+  // ==================== B2-C1 TEST MODE QUESTIONS (30 ITEMS) ====================
+  // --- VOCABULARY SECTION (1-10) ---
+  {
+    id: 'b2c1-v1',
+    level: 'B2',
+    type: 'vocabulary',
+    question: 'Durch die fortschreitende Automatisierung haben viele klassische Handwerksberufe an Bedeutung ___.',
+    options: ['verloren', 'gewonnen', 'erhalten', 'vermisst'],
+    correctIndex: 0,
+    translations: {
+      de: 'Durch die fortschreitende Automatisierung haben viele klassische Handwerksberufe an Bedeutung verloren.',
+      th: 'เนื่องจากระบบอัตโนมัติที่พัฒนาไปอย่างรวดเร็ว ทำให้อาชีพช่างฝีมือแบบดั้งเดิมจำนวนมากสูญเสียความสำคัญลงไป',
+      en: 'Due to advancing automation, many traditional craft professions have lost importance.'
+    },
+    explanation: {
+      de: 'Der feste Ausdruck lautet "an Bedeutung verlieren" (= weniger wichtig werden). Gegenteil: "an Bedeutung gewinnen".',
+      th: 'สำนวนภาษาเยอรมันคือ "an Bedeutung verlieren" แปลว่า สูญเสียความสำคัญหรือหมดความสำคัญลงไป ตรงข้ามกับ "an Bedeutung gewinnen" (ได้รับความนิยมเพิ่มขึ้น)',
+      en: 'The standard expression is "an Bedeutung verlieren" (to lose importance/significance). The opposite is "an Bedeutung gewinnen".'
+    }
+  },
+  {
+    id: 'b2c1-v2',
+    level: 'B2',
+    type: 'vocabulary',
+    question: 'Es ist in stressigen Situationen unerlässlich, einen kühlen Kopf zu ___.',
+    options: ['bewahren', 'halten', 'schonen', 'tragen'],
+    correctIndex: 0,
+    translations: {
+      de: 'Es ist in stressigen Situationen unerlässlich, einen kühlen Kopf zu bewahren.',
+      th: 'ในสถานการณ์ที่ตึงเครียด การรักษาความเยือกเย็น (ตั้งสติ) เอาไว้ถือเป็นสิ่งจำเป็นอย่างยิ่ง',
+      en: 'It is essential in stressful situations to keep a cool head.'
+    },
+    explanation: {
+      de: 'Die Redewendung "einen kühlen Kopf bewahren" bedeutet, in einer schwierigen Lage ruhig und besonnen zu bleiben.',
+      th: 'สำนวน "einen kühlen Kopf bewahren" แปลว่า "รักษาความสุขุม/มีสติเยือกเย็นท่ามกลางความกดดัน" ไม่ใช้คำว่า halten หรือ tragen',
+      en: 'The idiom "einen kühlen Kopf bewahren" means to stay calm, composed, and rational in a difficult or stressful situation.'
+    }
+  },
+  {
+    id: 'b2c1-v3',
+    level: 'B2',
+    type: 'vocabulary',
+    question: 'Der behandelnde Arzt verschrieb ein hochwirksames Medikament, um die akuten Schmerzen zu ___.',
+    options: ['lindern', 'steigern', 'verlängern', 'verteilen'],
+    correctIndex: 0,
+    translations: {
+      de: 'Der behandelnde Arzt verschrieb ein hochwirksames Medikament, um die akuten Schmerzen zu lindern.',
+      th: 'แพทย์ผู้ทำการรักษาได้สั่งยาที่มีประสิทธิภาพสูงเพื่อบรรเทาอาการปวดอย่างเฉียบพลัน',
+      en: 'The attending physician prescribed a highly effective medication to alleviate the acute pain.'
+    },
+    explanation: {
+      de: '"lindern" bedeutet, Schmerzen, Beschwerden oder Leiden abzumildern. "steigern" = erhöhen (falsch), "verlängern" = länger machen (falsch).',
+      th: '"lindern" แปลว่า "บรรเทา (ความเจ็บปวดหรือไข้ไข้)" ส่วน "steigern" แปลว่า เพิ่มขึ้น ซึ่งขัดแย้งกับจุดประสงค์ของยา',
+      en: '"lindern" means to soothe, alleviate, or ease pain or symptoms. "steigern" means to increase, and "verlängern" means to prolong.'
+    }
+  },
+  {
+    id: 'b2c1-v4',
+    level: 'B2',
+    type: 'vocabulary',
+    question: 'Die neue gesetzliche Regelung bezüglich des Datenschutzes tritt ab dem 1. Januar in ___.',
+    options: ['Kraft', 'Wirkung', 'Macht', 'Geltung'],
+    correctIndex: 0,
+    translations: {
+      de: 'Die neue gesetzliche Regelung bezüglich des Datenschutzes tritt ab dem 1. Januar in Kraft.',
+      th: 'ข้อกำหนดทางกฎหมายใหม่เกี่ยวกับการคุ้มครองข้อมูลส่วนบุคคลจะมีผลบังคับใช้ตั้งแต่วันที่ 1 มกราคมเป็นต้นไป',
+      en: 'The new legal regulation regarding data protection will come into force starting January 1st.'
+    },
+    explanation: {
+      de: '"in Kraft treten" ist ein rechtssprachlicher Fachausdruck für Gesetze, die offiziell gültig werden.',
+      th: '"in Kraft treten" เป็นสำนวนทางกฎหมายหมายถึง "เริ่มมีผลบังคับใช้ (สำหรับกฎหมายหรือข้อบังคับ)" ส่วน "in Wirkung treten" ไม่ใช่ภาษาราชการ',
+      en: '"in Kraft treten" is a fixed legal expression meaning to come into force or take effect (for laws/regulations).'
+    }
+  },
+  {
+    id: 'b2c1-v5',
+    level: 'C1',
+    type: 'vocabulary',
+    question: 'Ihr unermüdliches ehrenamtliches ___ trug maßgeblich zum Erfolg des sozialen Projekts bei.',
+    options: ['Engagement', 'Interesse', 'Verhalten', 'Erscheinen'],
+    correctIndex: 0,
+    translations: {
+      de: 'Ihr unermüdliches ehrenamtliches Engagement trug maßgeblich zum Erfolg des sozialen Projekts bei.',
+      th: 'การอุทิศตนทำงานอาสาสมัครอย่างไม่รู้จักเหน็ดเหนื่อยของเธอมีส่วนสำคัญอย่างยิ่งต่อความสำเร็จของโครงการเพื่อสังคมนี้',
+      en: 'Her tireless voluntary commitment contributed significantly to the success of the social project.'
+    },
+    explanation: {
+      de: '"Engagement" (soziales/politisches Engagement) beschreibt den aktiven, persönlichen Einsatz für eine Sache oder ein Ziel.',
+      th: '"Engagement" (การอุทิศตน/ความมุ่งมั่นทุ่มเททำงาน) เป็นคำยืมจากภาษาฝรั่งเศสที่ใช้บ่อยในระดับสูง เพื่อบอกถึงการสละแรงกายแรงใจช่วยงานสังคม',
+      en: '"Engagement" (commitment/involvement) refers to active, dedicated participation or effort towards a cause or project.'
+    }
+  },
+  {
+    id: 'b2c1-v6',
+    level: 'C1',
+    type: 'vocabulary',
+    question: 'Die neuesten Forschungsergebnisse weichen erheblich von den bisherigen Hypothesen ___.',
+    options: ['ab', 'aus', 'vor', 'zu'],
+    correctIndex: 0,
+    translations: {
+      de: 'Die neuesten Forschungsergebnisse weichen erheblich von den bisherigen Hypothesen ab.',
+      th: 'ผลการวิจัยล่าสุดมีความเบี่ยงเบน (แตกต่าง) ไปจากสมมติฐานเดิมก่อนหน้านี้อย่างมีนัยสำคัญ',
+      en: 'The latest research results deviate significantly from the previous hypotheses.'
+    },
+    explanation: {
+      de: 'Das Verb "abweichen" fordert die Präposition "von" + Dativ. "von etwas abweichen" = anders sein als die Erwartung oder Norm.',
+      th: 'กริยาคือ "abweichen" (เบี่ยงเบน/แตกต่างออกไป) ซึ่งต้องใช้คู่กับบุพบท "von" + Dativ เสมอ (รูปแยกคือ weichen ... ab)',
+      en: 'The verb "abweichen" requires the preposition "von" (to deviate/differ from). The separable verb prefix is "ab".'
+    }
+  },
+  {
+    id: 'b2c1-v7',
+    level: 'C1',
+    type: 'vocabulary',
+    question: 'Man sollte die potenziellen Risiken dieser langfristigen Geldanlage keinesfalls ___.',
+    options: ['verharmlosen', 'unterschätzen', 'verschönern', 'übergehen'],
+    correctIndex: 0,
+    translations: {
+      de: 'Man sollte die potenziellen Risiken dieser langfristigen Geldanlage keinesfalls verharmlosen.',
+      th: 'เราไม่ควรลดทอนความรุนแรง (มองข้ามอันตราย) ของความเสี่ยงที่อาจเกิดขึ้นจากการลงทุนระยะยาวนี้อย่างเด็ดขาด',
+      en: 'One should under no circumstances downplay the potential risks of this long-term investment.'
+    },
+    explanation: {
+      de: '"verharmlosen" bedeutet, etwas Gefährliches oder Negatives so darzustellen, als ob es harmlos und unbedeutend wäre.',
+      th: '"verharmlosen" แปลว่า "ทำให้ดูเหมือนไม่มีพิษมีภัย/ลดทอนความร้ายแรง" ซึ่งเหมาะสมที่สุดในบริบทเตือนภัยการลงทุนระดับสูง',
+      en: '"verharmlosen" means to downplay, trivialize, or minimize the danger or severity of something negative.'
+    }
+  },
+  {
+    id: 'b2c1-v8',
+    level: 'C1',
+    type: 'vocabulary',
+    question: 'Der erfahrene Redner verstand es, das skeptische Publikum vollkommen von seinen Thesen zu ___.',
+    options: ['überzeugen', 'überreden', 'übergehen', 'übermitteln'],
+    correctIndex: 0,
+    translations: {
+      de: 'Der erfahrene Redner verstand es, das skeptische Publikum vollkommen von seinen Thesen zu überzeugen.',
+      th: 'นักพูดผู้มีประสบการณ์รู้วิธีที่จะโน้มน้าวใจ (ทำให้เชื่อมั่น) ผู้ฟังที่กำลังคลางแคลงใจให้คล้อยตามข้อสมมติฐานของเขาได้อย่างสมบูรณ์',
+      en: 'The experienced speaker knew how to completely convince the skeptical audience of his theses.'
+    },
+    explanation: {
+      de: '"jemanden von etwas überzeugen" bedeutet, jemanden durch rationale Argumente und Beweise zu einer Einsicht zu bringen.',
+      th: '"überzeugen" แปลว่า "โน้มน้าวด้วยเหตุผลจนเชื่อมั่น" ใช้โครงสร้าง "jdn. von etw. überzeugen" ส่วน "überreden" คือตื๊อหรือชักจูงโดยไม่เน้นเหตุผล',
+      en: '"überzeugen" means to convince or persuade someone using solid arguments and facts, structured as "jdn. von etw. überzeugen".'
+    }
+  },
+  {
+    id: 'b2c1-v9',
+    level: 'B2',
+    type: 'vocabulary',
+    question: 'Sie hat die anspruchsvolle staatliche Prüfung zur Dolmetscherin mit Bravour ___.',
+    options: ['bestanden', 'geschrieben', 'erhalten', 'absolviert'],
+    correctIndex: 0,
+    translations: {
+      de: 'Sie hat die anspruchsvolle staatliche Prüfung zur Dolmetscherin mit Bravour bestanden.',
+      th: 'เธอสอบผ่านการสอบวัดระดับของรัฐที่ยากลำบagenสำหรับการเป็นล่ามได้อย่างราบรื่นและยอดเยี่ยมเป็นพิเศษ',
+      en: 'She passed the demanding state examination for interpreters with flying colors.'
+    },
+    explanation: {
+      de: '"eine Prüfung mit Bravour bestehen" ist ein fester idiomatischer Ausdruck für ein herausragendes Bestehen einer Prüfung.',
+      th: 'สำนวน "mit Bravour bestehen" แปลว่า "สอบผ่านได้อย่างยอดเยี่ยม/คะแนนสูงลิ่ว" มักคู่กับกริยา "bestehen" (bestanden ในรูปอดีต)',
+      en: '"eine Prüfung mit Bravour bestehen" is a fixed collocation meaning to pass an exam with distinction or "with flying colors".'
+    }
+  },
+  {
+    id: 'b2c1-v10',
+    level: 'C1',
+    type: 'vocabulary',
+    question: 'Die beiden vorgeschlagenen Lösungsansätze schließen sich gegenseitig ___.',
+    options: ['aus', 'ein', 'an', 'auf'],
+    correctIndex: 0,
+    translations: {
+      de: 'Die beiden vorgeschlagenen Lösungsansätze schließen sich gegenseitig aus.',
+      th: 'แนวทางการแก้ไขปัญหาทั้งสองแบบที่เสนอมานั้นเข้ากันไม่ได้ (เป็นปฏิปักษ์/กีดกันซึ่งกันและกัน)',
+      en: 'The two proposed solutions are mutually exclusive.'
+    },
+    explanation: {
+      de: '"sich gegenseitig ausschließen" bedeutet, dass nicht beide Dinge gleichzeitig wahr oder möglich sein können (mutually exclusive).',
+      th: '"sich gegenseitig ausschließen" (รูปแยกคือ schließen ... aus) แปลว่า "ขัดแย้งกันจนไปด้วยกันไม่ได้/ต่างฝ่ายต่างกีดกันกันและกัน"',
+      en: '"sich gegenseitig ausschließen" is a standard academic phrase meaning to be mutually exclusive.'
+    }
+  },
+
+  // --- WRITING SECTION (11-20) ---
+  {
+    id: 'b2c1-w1',
+    level: 'B2',
+    type: 'writing',
+    question: '___ ich Ihre Argumente im Wesentlichen verstehe, kann ich Ihrer Schlussfolgerung nicht zustimmen.',
+    options: ['Obwohl', 'Weil', 'Trotzdem', 'Deshalb'],
+    correctIndex: 0,
+    translations: {
+      de: 'Obwohl ich Ihre Argumente im Wesentlichen verstehe, kann ich Ihrer Schlussfolgerung nicht zustimmen.',
+      th: 'แม้ว่าฉันจะเข้าใจข้อโต้แย้งของคุณเป็นอย่างดี แต่ฉันก็ไม่สามารถเห็นด้วยกับข้อสรุปของคุณได้',
+      en: 'Although I essentially understand your arguments, I cannot agree with your conclusion.'
+    },
+    explanation: {
+      de: '"Obwohl" leitet einen Nebensatz (Konzessivsatz) ein, bei dem das konjugierte Verb am Ende steht. Es drückt einen Gegensatz aus.',
+      th: '"Obwohl" (แม้ว่า) ทำหน้าที่เชื่อมประโยคขัดแย้งเชิงสัมปทาน (Konzessivsatz) บังคับกริยาผันอยู่ท้ายประโยคย่อย ("verstehe")',
+      en: '"Obwohl" (although/even though) introduces a concessive subordinate clause with the conjugated verb at the very end.'
+    }
+  },
+  {
+    id: 'b2c1-w2',
+    level: 'B2',
+    type: 'writing',
+    question: 'Ein wesentlicher Vorteil von Elektrofahrzeugen besteht darin, ___ sie im Betrieb keine CO2-Emissionen verursachen.',
+    options: ['dass', 'weil', 'damit', 'ob'],
+    correctIndex: 0,
+    translations: {
+      de: 'Ein wesentlicher Vorteil von Elektrofahrzeugen besteht darin, dass sie im Betrieb keine CO2-Emissionen verursachen.',
+      th: 'ข้อดีที่สำคัญประการหนึ่งของยานยนต์ไฟฟ้าคือการที่พวกมันไม่ก่อให้เกิดการปล่อยก๊าซคาร์บอนไดออกไซด์ในระหว่างการใช้งาน',
+      en: 'A major advantage of electric vehicles is that they do not produce CO2 emissions during operation.'
+    },
+    explanation: {
+      de: 'Das Korrelat "darin" kündigt einen Nebensatz mit der Konjunktion "dass" an ("darin bestehen, dass...").',
+      th: 'โครงสร้าง "darin bestehen, dass..." แปลว่า "ประกอบด้วยการที่..." หรือ "คือการที่..." โดยใช้คำเชื่อม "dass" นำหน้าประโยคย่อยส่งกริยาไปท้ายสุด',
+      en: 'The pronominal adverb "darin" points forward to a explanatory subordinate clause introduced by the conjunction "dass".'
+    }
+  },
+  {
+    id: 'b2c1-w3',
+    level: 'B2',
+    type: 'writing',
+    question: 'Je intensiver man sich mit einer Fremdsprache beschäftigt, ___ schneller erzielt man sichtbare Fortschritte.',
+    options: ['desto', 'umso', 'so', 'mehr'],
+    correctIndex: 0,
+    translations: {
+      de: 'Je intensiver man sich mit einer Fremdsprache beschäftigt, desto schneller erzielt man sichtbare Fortschritte.',
+      th: 'ยิ่งเราใส่ใจฝึกฝนภาษาต่างประเทศอย่างเข้มข้นมากเท่าไร เราก็ยิ่งเห็นความก้าวหน้าได้อย่างรวดเร็วมากขึ้นเท่านั้น',
+      en: 'The more intensively one studies a foreign language, the faster one achieves visible progress.'
+    },
+    explanation: {
+      de: 'Die mehrteilige Konjunktion für proportionale Vergleiche lautet "je + Komparativ (Nebensatz), desto/umso + Komparativ (Hauptsatz)".',
+      th: 'โครงสร้างไวยากรณ์เปรียบเทียบสัดส่วนคู่คือ "je ... desto/umso" แปลว่า "ยิ่ง...ก็ยิ่ง..." โดยหลัง je เป็นประโยคย่อย และหลัง desto เป็นประโยคหลักสลับกริยา',
+      en: 'The proportional double-conjunction is "je + comparative (subordinate clause), desto/umso + comparative (main clause)".'
+    }
+  },
+  {
+    id: 'b2c1-w4',
+    level: 'C1',
+    type: 'writing',
+    question: 'Der vorliegende Artikel befasst sich eingehend mit der Fragestellung, ___ soziale Medien die Vereinsamung fördern.',
+    options: ['inwiefern', 'wogegen', 'wodurch', 'weshalb'],
+    correctIndex: 0,
+    translations: {
+      de: 'Der vorliegende Artikel befasst sich eingehend mit der Fragestellung, inwiefern soziale Medien die Vereinsamung fördern.',
+      th: 'บทความที่อยู่ตรงหน้านี้มุ่งเน้นศึกษาลงลึกในประเด็นคำถามที่ว่า สื่อสังคมออนไลน์ส่งผลให้เกิดความโดดเดี่ยวอ้างว้างในแง่ใดและมากน้อยเพียงใด',
+      en: 'The present article deals in detail with the question of the extent to which social media promotes loneliness.'
+    },
+    explanation: {
+      de: '"inwiefern" ist ein Interrogativadverb, das in indirekten Fragen verwendet wird und "in welchem Maße / auf welche Weise" bedeutet.',
+      th: '"inwiefern" เป็นคำเชื่อมทางวิชาการแปลว่า "ในแง่ใด/ถึงระดับใด (in what way / to what extent)" เหมาะสมที่สุดสำหรับการตั้งประเด็นวิจัยหรือหัวข้อเขียนวิเคราะห์',
+      en: '"inwiefern" (to what extent / in what way) is an interrogative adverb frequently used in academic writing to introduce indirect questions.'
+    }
+  },
+  {
+    id: 'b2c1-w5',
+    level: 'C1',
+    type: 'writing',
+    question: 'Es ist im wissenschaftlichen Diskurs ratsam, sachliche Argumente ___ emotionaler Kritik vorzuziehen.',
+    options: ['anstelle', 'trotz', 'wegen', 'während'],
+    correctIndex: 0,
+    translations: {
+      de: 'Es ist im wissenschaftlichen Diskurs ratsam, sachliche Argumente anstelle emotionaler Kritik vorzuziehen.',
+      th: 'ในการอภิปรายเชิงวิชาการ ขอแนะนำให้หยิบยกข้อโต้แย้งที่มีเหตุมีผลขึ้นมาเป็นอันดับแรกแทนที่จะใช้การวิพากษ์วิจารณ์ด้วยอารมณ์',
+      en: 'In scientific discourse, it is advisable to prefer objective arguments instead of emotional criticism.'
+    },
+    explanation: {
+      de: 'Die Präposition "anstelle" verlangt den Genitiv ("emotionaler Kritik") und bedeutet "statt / als Ersatz für".',
+      th: '"anstelle" เป็นบุพบทที่ต้องตามด้วยคำนามในรูป Genitiv เสมอ แปลว่า "แทนที่..." หรือ "แทนที่จะเป็น..." เหมาะสำหรับการเขียนวิเคราะห์เปรียบเทียบเป้าหมายสองสิ่ง',
+      en: 'The preposition "anstelle" (instead of) requires the Genitive case ("emotionaler Kritik") and is used to indicate substitution.'
+    }
+  },
+  {
+    id: 'b2c1-w6',
+    level: 'B2',
+    type: 'writing',
+    question: '___ lässt sich festhalten, dass die Vorteile dieser Technologie die Risiken bei weitem überwiegen.',
+    options: ['Zusammenfassend', 'Folglich', 'Demnach', 'Zwar'],
+    correctIndex: 0,
+    translations: {
+      de: 'Zusammenfassend lässt sich festhalten, dass die Vorteile dieser Technologie die Risiken bei weitem überwiegen.',
+      th: 'โดยสรุปแล้ว สามารถกล่าวได้ว่าประโยชน์ของเทคโนโลยีนี้มีน้ำหนักเหนือกว่าความเสี่ยงของมันอย่างมาก',
+      en: 'In conclusion, it can be stated that the benefits of this technology far outweigh the risks.'
+    },
+    explanation: {
+      de: '"Zusammenfassend lässt sich festhalten/sagen, dass..." ist ein Standard-Strukturmittel für das Fazit eines Aufsatzes.',
+      th: '"Zusammenfassend" (สรุปความได้ว่า) เป็นวลีเกริ่นนำยอดนิยมสำหรับย่อหน้าสรุปข้อเขียน (Fazit/Schluss) เพื่อให้งานเขียนเป็นระบบและสละสลวย',
+      en: '"Zusammenfassend" (in summary / in conclusion) is a transitional adverb used to introduce the concluding remarks of a text.'
+    }
+  },
+  {
+    id: 'b2c1-w7',
+    level: 'B2',
+    type: 'writing',
+    question: 'Bezüglich Ihres Schreibens vom 10. Mai möchte ich ___ wie folgt Stellung nehmen:',
+    options: ['hierzu', 'darüber', 'damit', 'wovon'],
+    correctIndex: 0,
+    translations: {
+      de: 'Bezüglich Ihres Schreibens vom 10. Mai möchte ich hierzu wie folgt Stellung nehmen:',
+      th: 'อ้างอิงถึงจดหมายของคุณลงวันที่ 10 พฤษภาคม ฉันขออนุญาตชี้แจงจุดยืนและแสดงความคิดเห็นต่อเรื่องนี้ดังต่อไปนี้',
+      en: 'With regard to your letter of May 10, I would like to take a position on this as follows:'
+    },
+    explanation: {
+      de: '"Stellung nehmen zu + Dativ". Das Pronominaladverb "hierzu" bezieht sich auf das zuvor erwähnte Schreiben ("zu diesem Schreiben").',
+      th: 'สำนวนคือ "Stellung nehmen zu (แสดงความเห็น/ชี้แจงจุดยืนต่อสิ่งใด)" ดังนั้นเมื่ออ้างถึงจดหมายข้างต้น จึงเปลี่ยนเป็นรูปสรรพนามบุพบท "hierzu" (ต่อสิ่งนี้)',
+      en: 'The idiom is "Stellung nehmen zu + Dative". The pronominal adverb "hierzu" replaces "zu diesem Schreiben" to refer back to the letter.'
+    }
+  },
+  {
+    id: 'b2c1-w8',
+    level: 'C1',
+    type: 'writing',
+    question: 'Es steht außer ___, dass eine fundierte Ausbildung die Chancen auf dem Arbeitsmarkt maximiert.',
+    options: ['Zweifel', 'Frage', 'Diskussion', 'Gefahr'],
+    correctIndex: 0,
+    translations: {
+      de: 'Es steht außer Zweifel, dass eine fundierte Ausbildung die Chancen auf dem Arbeitsmarkt maximiert.',
+      th: 'เป็นเรื่องที่ปราศจากข้อสงสัยใดๆ (แน่นอนที่สุด) ว่าการมีการศึกษาที่ดีและมั่นคงจะช่วยเพิ่มโอกาสสำเร็จในตลาดแรงงานได้อย่างสูงสุด',
+      en: 'There is no doubt that sound education/training maximizes opportunities in the labor market.'
+    },
+    explanation: {
+      de: 'Das Funktionsverbgefüge "außer Zweifel stehen" bedeutet "völlig sicher / unumstritten sein".',
+      th: 'สำนวนโครงสร้างกริยาเชิงฟังก์ชัน (Funktionsverbgefüge) "außer Zweifel stehen" แปลว่า "แน่นอน/ไม่ต้องสงสัยเลย" (ไม่มีการใช้ außer Frage ในความหมายนี้)',
+      en: 'The noun-verb combination "außer Zweifel stehen" is a formal academic structure meaning "to be beyond doubt / unquestionable".'
+    }
+  },
+  {
+    id: 'b2c1-w9',
+    level: 'C1',
+    type: 'writing',
+    question: 'Unter Berücksichtigung aller genannten Faktoren sollten wir die endgültige Entscheidung ___ aufschieben.',
+    options: ['vorerst', 'damit', 'jederzeit', 'neulich'],
+    correctIndex: 0,
+    translations: {
+      de: 'Unter Berücksichtigung aller genannten Faktoren sollten wir die endgültige Entscheidung vorerst aufschieben.',
+      th: 'เมื่อพิจารณาปัจจัยทั้งหมดที่กล่าวมาแล้ว พวกเราควรจะเลื่อนการตัดสินใจขั้นสุดท้ายออกไปก่อนในระยะนี้',
+      en: 'Taking all mentioned factors into account, we should postpone the final decision for the time being.'
+    },
+    explanation: {
+      de: '"vorerst" bedeutet "fürs Erste / im Moment noch" und drückt eine temporäre Verzögerung aus. Passt perfekt zum Verb "aufschieben".',
+      th: '"vorerst" (ณ ขณะนี้/ไว้ก่อนชั่วคราว) สอดคล้องอย่างยิ่งกับกริยา "aufschieben" (เลื่อนเวลาออกไป) เพื่อแสดงท่าทีรอบคอบในการเขียนเชิงวิชาชีพ',
+      en: '"vorerst" means "for now / for the time being" and perfectly complements the action of postponing ("aufschieben").'
+    }
+  },
+  {
+    id: 'b2c1-w10',
+    level: 'C1',
+    type: 'writing',
+    question: 'Um wissenschaftliche Redlichkeit zu garantieren, muss man fremdes Gedankengut stets präzise ___.',
+    options: ['zitieren', 'formulieren', 'kopieren', 'erfinden'],
+    correctIndex: 0,
+    translations: {
+      de: 'Um wissenschaftliche Redlichkeit zu garantieren, muss man fremdes Gedankengut stets präzise zitieren.',
+      th: 'เพื่อรับประกันความซื่อสัตย์สุจริตทางวิชาการ เราจำเป็นต้องอ้างอิงแนวคิดหรือผลงานของผู้อื่นอย่างถูกต้องและแม่นยำเสมอ',
+      en: 'To guarantee scientific integrity, one must always cite external ideas/works precisely.'
+    },
+    explanation: {
+      de: '"zitieren" ist der korrekte Begriff für das Kennzeichnen und Belegen von Gedanken und Texten anderer Autoren.',
+      th: '"zitieren" (อ้างอิงแหล่งที่มา/อัญพจน์) คือหัวใจหลักของจริยธรรมการเขียนเชิงวิชาการระดับสูง ป้องกันการคัดลอกผลงานโดยมิชอบ (Plagiat)',
+      en: '"zitieren" (to cite / quote) is the correct academic term for referencing and acknowledging other authors\' intellectual property.'
+    }
+  },
+
+  // --- SPEAKING SECTION (21-30) ---
+  {
+    id: 'b2c1-s1',
+    level: 'B2',
+    type: 'speaking',
+    question: 'Wie stehst du eigentlich zu diesem umstrittenen Vorschlag? - Um ehrlich zu sein, bin ich ganz deiner ___.',
+    options: ['Meinung', 'Ansicht', 'Idee', 'Stimme'],
+    correctIndex: 0,
+    translations: {
+      de: 'Wie stehst du eigentlich zu diesem umstrittenen Vorschlag? - Um ehrlich zu sein, bin ich ganz deiner Meinung.',
+      th: 'เธอมีความคิดเห็นอย่างไรกับข้อเสนอที่เป็นประเด็นถกเถียงนี้เหรอ? - พูดตามตรงนะ ฉันเห็นด้วยกับเธอทุกประการเลย',
+      en: 'What is your stance on this controversial proposal? - To be honest, I am completely of your opinion.'
+    },
+    explanation: {
+      de: 'Der feste Ausdruck für Zustimmung lautet "einer Meinung sein" ("ich bin deiner Meinung" = ich stimme dir zu).',
+      th: 'สำนวนบอกความเห็นพ้องในการพูดคุยคือ "jds. Meinung sein" (มีความเห็นเดียวกับใคร) ในที่นี้ผันในรูป Genitiv เพศหญิงคือ "deiner Meinung"',
+      en: 'The standard idiom to express agreement with someone is "einer Meinung sein" (to be of the same opinion).'
+    }
+  },
+  {
+    id: 'b2c1-s2',
+    level: 'B2',
+    type: 'speaking',
+    question: 'Keine Sorge wegen des Fehlers im Bericht. Das geht voll und ganz auf meine ___!',
+    options: ['Kappe', 'Tasche', 'Hand', 'Kosten'],
+    correctIndex: 0,
+    translations: {
+      de: 'Keine Sorge wegen des Fehlers im Bericht. Das geht voll und ganz auf meine Kappe!',
+      th: 'ไม่ต้องกังวลเกี่ยวกับข้อผิดพลาดในรายงานหรอกนะ เรื่องนี้ฉันขอรับผิดชอบเองทั้งหมดเลย!',
+      en: 'Don\'t worry about the mistake in the report. That is entirely on me (my responsibility)!'
+    },
+    explanation: {
+      de: 'Die Redewendung "etwas auf seine Kappe nehmen" bedeutet, die Verantwortung für einen Fehler oder ein Risiko zu übernehmen.',
+      th: 'สำนวนพูดคุยประจำวัน "etwas auf seine Kappe nehmen/gehen" แปลว่า "รับเป็นความรับผิดชอบของตนเอง/ยืดอกรับผิด"',
+      en: 'The colloquial German expression "etwas auf seine Kappe nehmen" means to take full responsibility or blame for a mistake.'
+    }
+  },
+  {
+    id: 'b2c1-s3',
+    level: 'B2',
+    type: 'speaking',
+    question: 'Ich habe das Vorstellungsgespräch gestern komplett verpatzt. - Ach, Kopf ___! Das nächste Mal klappt es bestimmt.',
+    options: ['hoch', 'runter', 'voran', 'auf'],
+    correctIndex: 0,
+    translations: {
+      de: 'Ich habe das Vorstellungsgespräch gestern komplett verpatzt. - Ach, Kopf hoch! Das nächste Mal klappt es bestimmt.',
+      th: 'เมื่อวานนี้ฉันทำพังกับการสัมภาษณ์งานไปหมดเลย - เอาน่า เชิดหน้าสู้เข้าไว้! ครั้งหน้าต้องสำเร็จแน่นอน',
+      en: 'I completely messed up the job interview yesterday. - Oh, cheer up! Next time it will definitely work out.'
+    },
+    explanation: {
+      de: 'Der ermutigende Zuruf "Kopf hoch!" wird verwendet, um jemanden in einer enttäuschenden Situation zu trösten und Mut zuzusprechen.',
+      th: 'สำนวนให้กำลังใจเวลาเพื่อนท้อแท้คือ "Kopf hoch!" แปลตรงตัวคือให้เชิดหัวขึ้น หรือเทียบเท่ากับ "สู้ๆ นะ / อย่าเพิ่งหมดหวัง"',
+      en: 'The encouraging idiomatic phrase "Kopf hoch!" (literally: head up) is used to comfort and motivate someone who is down.'
+    }
+  },
+  {
+    id: 'b2c1-s4',
+    level: 'C1',
+    type: 'speaking',
+    question: 'Wegen der aktuellen Wirtschaftskrise müssen wir in nächster Zeit wohl den Gürtel enger ___.',
+    options: ['schnallen', 'binden', 'ziehen', 'schließen'],
+    correctIndex: 0,
+    translations: {
+      de: 'Wegen der aktuellen Wirtschaftskrise müssen wir in nächster Zeit wohl den Gürtel enger schnallen.',
+      th: 'เนื่องจากวิกฤตเศรษฐกิจในปัจจุบัน ในช่วงเวลาหลังจากนี้พวกเราคงต้องรัดเข็มขัดให้แน่นขึ้น (ประหยัดค่าใช้จ่าย)',
+      en: 'Due to the current economic crisis, we will probably have to tighten our belts in the near future.'
+    },
+    explanation: {
+      de: 'Die Redewendung "den Gürtel enger schnallen" bedeutet, sparsamer zu leben und die Ausgaben deutlich zu reduzieren.',
+      th: 'สำนวนอุปมาอุปไมยด้านการเงิน "den Gürtel enger schnallen" แปลว่า "รัดเข็มขัด / ประหยัดอดออมเนื่องจากรายได้ลดลง"',
+      en: 'The idiom "den Gürtel enger schnallen" means to live more frugally and reduce expenditures during tough times.'
+    }
+  },
+  {
+    id: 'b2c1-s5',
+    level: 'C1',
+    type: 'speaking',
+    question: 'Rede doch bitte nicht ständig um den heißen ___ herum, sondern sag mir klipp und klar, was los ist!',
+    options: ['Brei', 'Topf', 'Ofen', 'Kuchen'],
+    correctIndex: 0,
+    translations: {
+      de: 'Rede doch bitte nicht ständig um den heißen Brei herum, sondern sag mir klipp und klar, was los ist!',
+      th: 'กรุณาอย่าพูดอ้อมค้อมไปมาอยู่เลย ช่วยบอกฉันมาตรงๆ ชัดเจนเลยดีกว่าว่าเกิดอะไรขึ้น!',
+      en: 'Please don\'t keep beating around the bush, just tell me clearly what is going on!'
+    },
+    explanation: {
+      de: 'Die Redewendung "um den heißen Brei herumreden" bedeutet, eine klare Antwort zu vermeiden und das eigentliche Thema ungesagt zu lassen.',
+      th: 'สำนวนพูดสุดคลาสสิก "um den heißen Brei herumreden" แปลตรงตัวคือพูดรอบโจ๊กที่ยังร้อนอยู่ หรือเปรียบเทียบคือ "พูดอ้อมค้อมไม่ยอมเข้าประเด็นหลัก"',
+      en: 'The idiomatic expression "um den heißen Brei herumreden" means to beat around the bush or avoid speaking directly about a sensitive topic.'
+    }
+  },
+  {
+    id: 'b2c1-s6',
+    level: 'C1',
+    type: 'speaking',
+    question: 'Haben Sie verstanden, worum es in dieser komplexen Software-Schulung ging? - Nein, ehrlich gesagt verstehe ich nur ___.',
+    options: ['Bahnhof', 'Flughafen', 'Zug', 'Auto'],
+    correctIndex: 0,
+    translations: {
+      de: 'Haben Sie verstanden, worum es in dieser komplexen Software-Schulung ging? - Nein, ehrlich gesagt verstehe ich nur Bahnhof.',
+      th: 'คุณเข้าใจไหมว่าการอบรมซอฟต์แวร์ที่ซับซ้อนนี้เกี่ยวกับอะไร? - ไม่เลยครับ พูดตรงๆ คือฉันฟังไม่รู้เรื่องเลยสักนิดเดียว',
+      en: 'Did you understand what this complex software training was about? - No, to be honest, it is all Greek to me.'
+    },
+    explanation: {
+      de: 'Die umgangssprachliche Redewendung "nur Bahnhof verstehen" bedeutet, dass man absolut nichts von dem versteht, was gesagt wird.',
+      th: 'สำนวนเยอรมันแท้ "nur Bahnhof verstehen" (เข้าใจแต่คำว่าสถานีรถไฟ) มีความหมายว่า "ฟังไม่เข้าใจเลยสักนิด / จับต้นชนปลายไม่ถูกเลย"',
+      en: 'The popular colloquial idiom "nur Bahnhof verstehen" means to understand absolutely nothing of what is being explained.'
+    }
+  },
+  {
+    id: 'b2c1-s7',
+    level: 'B2',
+    type: 'speaking',
+    question: 'Er redet zwar sehr viel und eloquent, aber er drückt sich immer um eine konkrete ___ herum.',
+    options: ['Antwort', 'Frage', 'Arbeit', 'Meinung'],
+    correctIndex: 0,
+    translations: {
+      de: 'Er redet zwar sehr viel und eloquent, aber er drückt sich immer um eine konkrete Antwort herum.',
+      th: 'แม้เขาจะพูดเก่งและดูภูมิฐานมาก แต่เขามักจะหลบเลี่ยงไม่ยอมให้คำตอบที่ชัดเจนและเป็นรูปธรรมเสมอ',
+      en: 'Although he talks a lot and eloquently, he always dodges a concrete answer.'
+    },
+    explanation: {
+      de: '"sich um etwas herumdrücken" bedeutet, einer Pflicht, Aufgabe oder klaren Stellungnahme geschickt aus dem Weg zu gehen.',
+      th: 'กริยา "sich um etw. herumdrücken" แปลว่า "บ่ายเบี่ยง / หลบเลี่ยง (ความรับผิดชอบหรือคำตอบตรงๆ)" มักตามด้วยนามเพศหญิง "Antwort"',
+      en: '"sich um etwas herumdrücken" is a common phrase meaning to dodge, evade, or avoid a duty, task, or clear statement.'
+    }
+  },
+  {
+    id: 'b2c1-s8',
+    level: 'C1',
+    type: 'speaking',
+    question: 'Mit meiner unbedachten kritischen Äußerung vor dem Chef habe ich mich gestern vollkommen in die ___ gesetzt.',
+    options: ['Nesseln', 'Haare', 'Karten', 'Wolken'],
+    correctIndex: 0,
+    translations: {
+      de: 'Mit meiner unbedachten kritischen Äußerung vor dem Chef habe ich mich gestern vollkommen in die Nesseln gesetzt.',
+      th: 'การที่ฉันแสดงความเห็นวิพากษ์วิจารณ์อย่างไม่ยั้งคิดต่อหน้าเจ้านายเมื่อวานนี้ ทำให้ฉันตกที่นั่งลำบาก (สร้างปัญหาให้ตัวเอง) เสียแล้ว',
+      en: 'With my thoughtless critical remark in front of the boss yesterday, I got myself into serious hot water.'
+    },
+    explanation: {
+      de: 'Die Redewendung "sich in die Nesseln setzen" bedeutet, sich durch unvorsichtiges Verhalten Unannehmlichkeiten oder Ärger einzuhandeln.',
+      th: 'สำนวน "sich in die Nesseln setzen" (เข้าไปนั่งในกอต้นตำแยที่คันและแสบ) แปลว่า "แส่หาเรื่องใส่ตัว / หาเหาใส่หัว / ตกที่นั่งลำบากเพราะคำพูดตัวเอง"',
+      en: 'The figurative expression "sich in die Nesseln setzen" (literally: to sit in the nettles) means to get into trouble or hot water due to indiscretion.'
+    }
+  },
+  {
+    id: 'b2c1-s9',
+    level: 'B2',
+    type: 'speaking',
+    question: 'Unser mühsam ausgearbeitetes Konzept wurde vom Vorstand abgelehnt. Jetzt müssen wir wieder ganz bei ___ anfangen.',
+    options: ['Null', 'Eins', 'Anfang', 'Ende'],
+    correctIndex: 0,
+    translations: {
+      de: 'Unser mühsam ausgearbeitetes Konzept wurde vom Vorstand abgelehnt. Jetzt müssen wir wieder ganz bei Null anfangen.',
+      th: 'แนวคิดที่พวกเราอุตส่าห์ร่วมกันระดมสมองคิดมาอย่างยากลำบากถูกคณะกรรมการปฏิเสธ ตอนนี้เราคงต้องกลับไปเริ่มต้นนับหนึ่งใหม่หมดเลย',
+      en: 'Our painstakingly developed concept was rejected by the board. Now we have to start from scratch all over again.'
+    },
+    explanation: {
+      de: 'Der Ausdruck "bei Null anfangen" bedeutet, nach einem Fehlschlag oder einer Änderung wieder ganz von vorn zu beginnen.',
+      th: 'สำนวน "bei Null anfangen" (เริ่มต้นนับศูนย์ใหม่) แปลตรงกับภาษาไทยว่า "เริ่มต้นจากศูนย์ / เริ่มต้นใหม่ทั้งหมดจากจุดไม่มีอะไรเลย"',
+      en: '"bei Null anfangen" (to start from zero) is the German equivalent of starting completely from scratch or going back to square one.'
+    }
+  },
+  {
+    id: 'b2c1-s10',
+    level: 'C1',
+    type: 'speaking',
+    question: 'Ich weiß, dass morgen deine entscheidende Abschlussprüfung ansteht. Ich drücke dir ganz fest beide ___!',
+    options: ['Daumen', 'Hände', 'Finger', 'Augen'],
+    correctIndex: 0,
+    translations: {
+      de: 'Ich weiß, dass morgen deine entscheidende Abschlussprüfung ansteht. Ich drücke dir ganz fest beide Daumen!',
+      th: 'ฉันรู้นะว่าพรุ่งนี้เธอมีสอบไล่ครั้งสำคัญที่สุด ฉันขอส่งกำลังใจและช่วยลุ้น (ขอให้โชคดี) อย่างเต็มที่เลยนะ!',
+      en: 'I know that your decisive final exam is tomorrow. I will keep my fingers crossed tightly for you!'
+    },
+    explanation: {
+      de: 'Die Redewendung "jemandem die Daumen drücken" drückt den Wunsch aus, dass eine andere Person Erfolg bei einer schwierigen Aufgabe hat.',
+      th: 'สำนวนอวยพรอันดับหนึ่งของคนเยอรมัน "jdm. die Daumen drücken" (กดนิ้วหัวแม่โป้งให้ใคร) แปลว่า "อวยพรให้โชคดี / ขอให้ประสบความสำเร็จ"',
+      en: '"jemandem die Daumen drücken" is the German cultural equivalent of keeping ones fingers crossed to wish someone good luck.'
     }
   }
 ]
